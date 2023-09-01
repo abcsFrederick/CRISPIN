@@ -1,4 +1,4 @@
-# Contributing to TOOL_NAME
+# Contributing to CRUISE
 
 TODO -- describe gitflow, require PRs...
 

@@ -6,13 +6,14 @@ requires = [
 build-backend = 'setuptools.build_meta'
 
 [project]
-name = 'TOOL_NAME'
+name = 'CRUISE'
 dynamic = ['version','readme']
-description = "TODO insert description of TOOL_NAME here"
+description = "TODO insert description of CRUISE here"
 keywords = ["bioinformatics", "nextflow"]
 authors = [
     {name = "Kelly Sovacool", email = "kelly.sovacool@nih.gov"},
     {name = "Vishal Koparde", email = "vishal.koparde@nih.gov"},
+    {name = "Nathan Wong"},
 ]
 maintainers = [
     {name = "CCR Collaborative Bioinformatics Resource", email = "ccbr@mail.nih.gov"},
@@ -49,16 +50,16 @@ test = [
 ]
 
 [project.scripts]
-tool_name = "tool_name.src.__main__:main"
+cruise = "cruise.src.__main__:main"
 
 [project.urls]
-Homepage = "https://ccbr.github.io/TOOL_NAME"
-Documentation = "https://ccbr.github.io/TOOL_NAME"
-Repository = "https://github.com/CCBR/TOOL_NAME"
-Changelog = "https://github.com/CCBR/TOOL_NAME/blob/main/docs/CHANGELOG.md"
+Homepage = "https://ccbr.github.io/CRUISE"
+Documentation = "https://ccbr.github.io/CRUISE"
+Repository = "https://github.com/CCBR/CRUISE"
+Changelog = "https://github.com/CCBR/CRUISE/blob/main/docs/CHANGELOG.md"
 
 [tool.setuptools.package-dir]
-tool_name = "."
+cruise = "."
 
 [tool.setuptools.package-data]
 "*" = ["CITATION.cff", "LICENSE", "VERSION", "main.nf", "nextflow.conf", "bin/", "conf/", "modules/*/*", "submodules/*/*"]

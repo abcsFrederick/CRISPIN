@@ -1,7 +1,6 @@
-<!-- the README is inserted here automatically-->
-
 --8<-- "README.md"
 
+<!-- the README is inserted here automatically-->
 <!--- write additional info that you only want to appear in the docs index here -->
 
 Information on who the pipeline was developed for, and a statement if it's only been tested on Biowulf. For example:

@@ -47,24 +47,24 @@ def common_options(func):
 )
 @click.version_option(get_version(), "-v", "--version", is_flag=True)
 def cli():
-    """TOOL_NAME description TODO
+    """CRUISE description TODO
 
     For more options, run:
-    tool_name [command] --help"""
+    cruise [command] --help"""
     pass
 
 
 help_msg_extra = """
 \b
 CLUSTER EXECUTION:
-tool_name run ... -profile [profile],[profile],...
+cruise run ... -profile [profile],[profile],...
 For information on Nextflow config and profiles see:
 https://www.nextflow.io/docs/latest/config.html#config-profiles
 \b
 RUN EXAMPLES:
-Use singularity:    tool_name run ... -profile singularity
-Specify threads:    tool_name run ... --threads [threads]
-Add NextFlow args:  tool_name run ... -work-dir workDir -with-docker
+Use singularity:    cruise run ... -profile singularity
+Specify threads:    cruise run ... --threads [threads]
+Add NextFlow args:  cruise run ... -work-dir workDir -with-docker
 """
 
 
@@ -110,7 +110,7 @@ def citation(**kwargs):
 
 cli.add_command(run)
 cli.add_command(config)
-# cli.add_command(citation) # TODO uncomment if tool_name is published in a journal or Zenodo
+# cli.add_command(citation) # TODO uncomment if cruise is published in a journal or Zenodo
 
 
 def main():

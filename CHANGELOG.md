@@ -1,18 +1,7 @@
-## TOOL_NAME development version
+## CRUISE development version
 
-### API-breaking changes
+<!--
+## CRUISE v0.1.0
 
-- change 1
-- example 2
-
-### New features
-
-- new feat 1
-
-### Bug fixes
-
-- description of bug fixed
-
-## TOOL_NAME v0.1.0
-
-This is the first release of TOOL_NAME 🎉
+This is the first release of CRUISE 🎉
+-->
