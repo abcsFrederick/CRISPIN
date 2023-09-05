@@ -1,0 +1,4 @@
+dockerhub_namespace: kellysovacool
+image_name: bagel
+version: test
+container: "$(dockerhub_namespace)/$(image_name):$(version)"
