@@ -2,6 +2,8 @@
 
 **C**rispr sc**R**een seq**U**encIng analy**S**is pip**E**line
 
+🚧 **This project is under active development. It is not yet ready for production use.** 🚧
+
 ## Usage
 
 Install the tool in edit mode:
