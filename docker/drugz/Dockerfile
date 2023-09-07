@@ -15,6 +15,7 @@ ADD https://github.com/hart-lab/drugz/archive/refs/heads/master.zip /opt2
 WORKDIR /opt2
 RUN ls
 RUN unzip master.zip && rm -f master.zip
+RUN chmod a+rx /opt2/drugz-master/drugz.py
 ENV PATH="${PATH}:/opt2/drugz-master"
 
 # cleanup etc
