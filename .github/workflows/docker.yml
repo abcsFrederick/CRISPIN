@@ -2,8 +2,14 @@ name: docker
 
 on:
   push:
+    branches:
+      - main
     paths:
-      - .github/workflows/docker.yml
+      - "docker/**"
+  pull_request:
+    branches:
+      - main
+    paths:
       - "docker/**"
   workflow_dispatch:
 
@@ -49,6 +55,7 @@ jobs:
         if: ${{ steps.metadata.outputs['container'] != '' }}
         with:
           context: docker/${{ matrix.image_dir }}
+          # only push container to docker hub if not triggered from a PR
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.metadata.outputs['container'] }}
           build-args: |
