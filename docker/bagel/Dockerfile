@@ -8,13 +8,16 @@ ENV BUILD_TAG=${BUILD_TAG}
 ARG REPONAME="000000"
 ENV REPONAME=${REPONAME}
 
+# specific tagged version for bagel
+ENV BAGEL_TAG="2.0-115"
+
 # download bagel scripts and install dependencies
 RUN python3 -m pip install --upgrade pip
 RUN pip3 install click numpy scipy scikit-learn
-ADD https://github.com/hart-lab/bagel/archive/refs/tags/v2.0-115.tar.gz /opt2
+ADD https://github.com/hart-lab/bagel/archive/refs/tags/v${BAGEL_TAG}.tar.gz /opt2
 WORKDIR /opt2
-RUN tar -xzvf v2.0-115.tar.gz && rm -f v2.0-115.tar.gz
-ENV PATH="${PATH}:/opt2/bagel-2.0-115"
+RUN tar -xzvf v${BAGEL_TAG}.tar.gz && rm -f v${BAGEL_TAG}.tar.gz
+ENV PATH="${PATH}:/opt2/bagel-${BAGEL_TAG}"
 
 # cleanup etc
 # Save Dockerfile in the docker
