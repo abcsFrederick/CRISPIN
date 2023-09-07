@@ -38,6 +38,28 @@ process DRUGZ {
     """
 }
 
+process MAGECK {
+    output:
+        path("output.txt")
+
+    script:
+    """
+    uname -a >> output.txt
+    which mageck >> output.txt
+    """
+}
+
+process VISPR {
+    output:
+        path("output.txt")
+
+    script:
+    """
+    uname -a >> output.txt
+    which vispr >> output.txt
+    """
+}
+
 process BASE {
     output:
         path("output.txt")
@@ -52,4 +74,6 @@ workflow {
     BASE()
     DRUGZ()
     BAGEL()
+    MAGECK()
+    VISPR()
 }
