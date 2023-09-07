@@ -8,15 +8,18 @@ ENV BUILD_TAG=${BUILD_TAG}
 ARG REPONAME="000000"
 ENV REPONAME=${REPONAME}
 
+# specific commit to download from github because drugZ doesn't use tags/versions/releases
+ENV DRUGZ_COMMIT="eb15d34e4dd172965e618d5bb662c053066da799"
+
 # download drugz script and install dependencies
 RUN python3 -m pip install --upgrade pip
 RUN pip3 install six numpy pandas scipy argparse
-ADD https://github.com/hart-lab/drugz/archive/refs/heads/master.zip /opt2
+ADD https://github.com/hart-lab/drugz/archive/${DRUGZ_COMMIT}.zip /opt2
 WORKDIR /opt2
-RUN ls
-RUN unzip master.zip && rm -f master.zip
-RUN chmod a+rx /opt2/drugz-master/drugz.py
-ENV PATH="${PATH}:/opt2/drugz-master"
+RUN unzip ${DRUGZ_COMMIT}.zip && rm -f ${DRUGZ_COMMIT}.zip
+RUN mv drugz-${DRUGZ_COMMIT}/ drugZ/
+RUN chmod a+rx /opt2/drugZ/drugz.py
+ENV PATH="${PATH}:/opt2/drugZ"
 
 # cleanup etc
 # Save Dockerfile in the docker
