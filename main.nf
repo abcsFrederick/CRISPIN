@@ -12,20 +12,44 @@ projectDir   : $workflow.projectDir
 launchDir    : $workflow.launchDir
 workDir      : $workflow.workDir
 homeDir      : $workflow.homeDir
-reads        : ${params.reads}
+reads        : ${params.input}
 """
 .stripIndent()
 
-process yeet {
+process BAGEL {
     output:
-    stdout
+        path("output.txt")
 
     script:
     """
-    echo ${params.input}
+    uname -a >> output.txt
+    which BAGEL.py >> output.txt
     """
 }
 
+process DRUGZ {
+    output:
+        path("output.txt")
+
+    script:
+    """
+    uname -a >> output.txt
+    which drugz.py >> output.txt
+    """
+}
+
+process BASE {
+    output:
+        path("output.txt")
+
+    script:
+    """
+    uname -a >> output.txt
+    python -V >> output.txt
+    """
+}
 workflow {
-    yeet | view
+    BASE()
+    DRUGZ()
+    BAGEL()
 }
