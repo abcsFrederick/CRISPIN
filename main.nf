@@ -16,6 +16,13 @@ reads        : ${params.input}
 """
 .stripIndent()
 
+
+// SUBMODULES
+include { INPUT_CHECK } from './submodules/local/input_check.nf'
+
+// MODULES
+include { TRIM_SE } from './modules/local/trim.nf'
+
 process BAGEL {
     output:
         path("output.txt")
@@ -76,4 +83,7 @@ workflow {
     BAGEL()
     MAGECK()
     VISPR()
+    INPUT_CHECK(file(params.input), params.seq_center)
+    INPUT_CHECK.out.reads.set{ raw_fastqs }
+    raw_fastqs | TRIM_SE
 }
