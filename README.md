@@ -4,6 +4,8 @@
 
 🚧 **This project is under active development. It is not yet ready for production use.** 🚧
 
+[![build](https://github.com/CCBR/CRUISE/actions/workflows/build.yml/badge.svg)](https://github.com/CCBR/CRUISE/actions/workflows/build.yml)
+
 ## Usage
 
 Install the tool in edit mode:
