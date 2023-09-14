@@ -1,6 +1,7 @@
 
 process MAGECK_TEST {
     label 'mageck'
+    container 'quay.io/biocontainers/mageck:0.5.9.5--py39h1f90b4d_3'
 
     input:
       path(count)
@@ -30,6 +31,7 @@ process MAGECK_TEST {
 
 process MAGECK_MLE {
     label 'mageck'
+    container 'quay.io/biocontainers/mageck:0.5.9.5--py39h1f90b4d_3'
 
     input:
         path(count)
@@ -57,6 +59,7 @@ process MAGECK_MLE {
 
 process VISPR { // TODO
     label 'vispr'
+    container 'quay.io/biocontainers/mageck-vispr:0.5.6--py_0'
 
     output:
         path("output.txt")

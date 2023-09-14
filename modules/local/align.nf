@@ -1,6 +1,7 @@
 
 process MAGECK_COUNT {
     label 'mageck'
+    container 'quay.io/biocontainers/mageck:0.5.9.5--py39h1f90b4d_3'
 
     input:
         file(lib)
@@ -26,6 +27,8 @@ process MAGECK_COUNT {
     for ext in count count_normalized countsummary; do
         touch ${params.exp_name}.\${ext}.txt
     done
+    uname -a > output.txt
+    echo ${task.container} >> output.txt
     """
 
 }

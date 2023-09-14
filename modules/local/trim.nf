@@ -5,6 +5,7 @@ process TRIM_SE {
   tag { meta.id }
   label 'qc'
   label 'process_high'
+  container 'nciccbr/ncigb_cutadapt_v1.18:latest'
 
   input:
     tuple val(meta), path(fastq)
