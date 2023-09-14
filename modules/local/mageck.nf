@@ -56,6 +56,8 @@ process MAGECK_MLE {
 }
 
 process VISPR { // TODO
+    label 'vispr'
+
     output:
         path("output.txt")
 

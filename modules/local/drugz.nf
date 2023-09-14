@@ -1,5 +1,6 @@
 
 process DRUGZ {
+    label 'drugz'
 
     input:
         path(count)
