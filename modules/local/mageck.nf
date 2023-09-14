@@ -1,21 +1,39 @@
 
 process MAGECK_COUNT {
 
-}
+    input:
+        tuple path(lib), path(fastqs)
 
-process MAGECK {
     output:
-        path("output.txt")
+      path("count.txt")
 
     script:
     """
-    uname -a >> output.txt
-    which mageck >> output.txt
+    mageck count \\
+      -l ${lib} \\
+      --fastq ${fastqs.join.(' ')}
+    """
+
+}
+
+process MAGECK_TEST {
+    input:
+      tuple path(count), val(treatment), val(control)
+
+    output:
+      path("gene_summary.txt")
+
+    script:
+    """
+    mageck test \\
+      -k ${count} \\
+      -t ${treatment.join(',')} \\
+      -c ${control.join(',')}
     """
 }
 
 
-process VISPR {
+process VISPR { // TODO
     output:
         path("output.txt")
 
