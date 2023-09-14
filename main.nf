@@ -18,32 +18,19 @@ reads        : ${params.input}
 
 // SUBMODULES
 include { INPUT_CHECK } from './submodules/local/input_check.nf'
+include { TRIM_ALIGN  } from './submodules/local/trim_align.nf'
 include { MAGECK      } from './submodules/local/mageck.nf'
-
-// MODULES
-include { TRIM_SE      } from './modules/local/trim.nf'
-include { MAGECK_COUNT } from "./modules/local/align.nf"
-
 
 workflow CRUISE {
     INPUT_CHECK(file(params.input))
-    raw_reads = INPUT_CHECK.out.reads
+    INPUT_CHECK.out
+        .reads
+        .set { raw reads }
 
     ch_count = params.count_table ? file(params.count_table, checkIfExists: true) : null
     if (!ch_count) { // trim reads and run mageck count
-        TRIM_SE(raw_reads)
-        TRIM_SE.out.reads
-        .multiMap { meta, fastq ->
-            id: meta.id
-            fastq: fastq
-        }
-        .set{ trimmed_reads }
-
-        MAGECK_COUNT(file(params.library),
-                    trimmed_reads.id.collect(),
-                    trimmed_reads.fastq.collect()
-                    )
-        ch_count = MAGECK_COUNT.out.count
+        TRIM_ALIGN(raw_reads, file(params.library))
+        ch_count = TRIM_ALIGN.out.count
     }
 
     raw_reads

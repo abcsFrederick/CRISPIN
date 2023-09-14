@@ -1,2 +1,2 @@
-sample,fastq_1,fastq_2
-s1_rep1,tests/data/file.fastq.gz,,
+sample,fastq_1,fastq_2,treat_or_ctrl
+s1_rep1,tests/data/file.fastq.gz,,treatment
