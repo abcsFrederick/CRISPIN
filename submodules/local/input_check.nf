@@ -8,13 +8,12 @@ include { SAMPLESHEET_CHECK } from '../../modules/local/samplesheet_check.nf'
 workflow INPUT_CHECK {
     take:
     samplesheet // file: /path/to/samplesheet.csv
-    seq_center  // string: sequencing center for read group
 
     main:
     SAMPLESHEET_CHECK ( samplesheet )
         .csv
         .splitCsv ( header:true, sep:',' )
-        .map { create_fastq_channel(it, seq_center) }
+        .map { create_fastq_channel(it) }
         .set { reads }
 
     emit:
@@ -23,10 +22,11 @@ workflow INPUT_CHECK {
 }
 
 // Function to get list of [ meta, [ fastq_1, fastq_2 ] ]
-def create_fastq_channel(LinkedHashMap row, String seq_center) {
+def create_fastq_channel(LinkedHashMap row) {
     def meta = [:]
     meta.id         = row.sample
     meta.single_end = row.single_end.toBoolean()
+    meta.treat_or_ctrl = row.treat_or_ctrl
 
     // add path(s) of the fastq file(s) to the meta map
     def fastq_meta = []
