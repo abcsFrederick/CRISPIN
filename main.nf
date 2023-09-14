@@ -21,6 +21,9 @@ include { INPUT_CHECK } from './submodules/local/input_check.nf'
 include { TRIM_ALIGN  } from './submodules/local/trim_align.nf'
 include { MAGECK      } from './submodules/local/mageck.nf'
 
+// MODULES
+include { DRUGZ } from "./modules/local/drugz.nf"
+
 workflow CRUISE {
     INPUT_CHECK(file(params.input))
     INPUT_CHECK.out
@@ -40,10 +43,14 @@ workflow CRUISE {
         ctrl: meta.treat_or_ctrl == 'control'
             return meta.id
       }
-      .set { treatments }
+      .set { treat_meta }
+    treat = treat_meta.treat.collect()
+    control = treat_meta.ctrl.collect()
+    MAGECK(ch_count, treat, control)
 
-    MAGECK(ch_count, treatments.treat.collect(), treatments.ctrl.collect())
-
+    if (params.drugz.run) {
+        DRUGZ(ch_count, treat, control)
+    }
 }
 
 workflow {
