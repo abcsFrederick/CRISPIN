@@ -1,2 +1,3 @@
 sample,fastq_1,fastq_2
-haploid_hESC_library_Day30_rep1_run2,data/test/SRR6795299.fastq.gz,,
+plasmid,data/test/ERR376998.fastq.gz,,
+ESC1,data/test/ERR376999.fastq.gz,,
