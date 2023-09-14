@@ -8,8 +8,8 @@ process MAGECK_TEST {
       val(control)
 
     output:
-      path("*.gene_summary.txt"), emit: gene_sum
-      path("*.sgrna_summary.txt"), emit: sgrna_sum
+      path("*.gene_summary.txt"), emit: gene
+      path("*.sgrna_summary.txt"), emit: sgrna
 
     script:
     """
@@ -36,8 +36,8 @@ process MAGECK_MLE {
         path(design)
 
     output:
-        path("*.gene_summary.txt"), emit: gene_sum
-        path("*.sgrna_summary.txt"), emit: sgrna_sum
+        path("*.gene_summary.txt"), emit: gene
+        path("*.sgrna_summary.txt"), emit: sgrna
 
     script:
     """

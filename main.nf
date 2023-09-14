@@ -18,12 +18,12 @@ reads        : ${params.input}
 
 // SUBMODULES
 include { INPUT_CHECK } from './submodules/local/input_check.nf'
+include { MAGECK      } from './submodules/local/mageck.nf'
 
 // MODULES
 include { TRIM_SE      } from './modules/local/trim.nf'
 include { MAGECK_COUNT } from "./modules/local/align.nf"
-include { MAGECK_TEST  } from "./modules/local/mageck.nf"
-include { MAGECK_MLE   } from "./modules/local/mageck.nf"
+
 
 workflow CRUISE {
     INPUT_CHECK(file(params.input))
@@ -54,14 +54,9 @@ workflow CRUISE {
             return meta.id
       }
       .set { treatments }
-    MAGECK_TEST(ch_count,
-                treatments.treat.collect(),
-                treatments.ctrl.collect()
-               )
 
-    if (params.design_matrix) {
-        MAGECK_MLE(ch_count, file(params.design_matrix))
-    }
+    MAGECK(ch_count, treatments.treat.collect(), treatments.ctrl.collect())
+
 }
 
 workflow {
