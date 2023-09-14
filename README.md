@@ -8,19 +8,17 @@
 
 ## Usage
 
-Install the tool in edit mode:
+Run the test profile with stubs to see which processes will run
 
 ```sh
-pip3 install -e .
+CRUISE run -profile test,singularity -stub
 ```
 
-Run the example
+Run the test profile
 
 ```sh
-CRUISE run --input "Hello world"
+CRUISE run -profile test,singularity
 ```
-
-![dag](assets/dag.png)
 
 ## Help & Contributing
 
