@@ -20,9 +20,10 @@ input        : ${params.input}
 include { INPUT_CHECK } from './submodules/local/input_check.nf'
 include { TRIM_ALIGN  } from './submodules/local/trim_align.nf'
 include { MAGECK      } from './submodules/local/mageck.nf'
+include { BAGEL       } from './submodules/local/bagel.nf'
 
 // MODULES
-include { DRUGZ } from "./modules/local/drugz.nf"
+include { DRUGZ } from './modules/local/drugz.nf'
 
 workflow CRUISE {
     INPUT_CHECK(file(params.input))
@@ -44,12 +45,17 @@ workflow CRUISE {
             return meta.id
       }
       .set { treat_meta }
+
     treat = treat_meta.treat.collect()
     control = treat_meta.ctrl.collect()
-    MAGECK(ch_count, treat, control)
-
+    if (params.mageck.run) {
+        MAGECK(ch_count, treat, control)
+    }
     if (params.drugz.run) {
         DRUGZ(ch_count, treat, control)
+    }
+    if (params.bagel.run) {
+        BAGEL(ch_count, control)
     }
 }
 
