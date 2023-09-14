@@ -12,7 +12,7 @@ projectDir   : $workflow.projectDir
 launchDir    : $workflow.launchDir
 workDir      : $workflow.workDir
 homeDir      : $workflow.homeDir
-reads        : ${params.input}
+input        : ${params.input}
 """
 .stripIndent()
 
@@ -25,7 +25,7 @@ workflow CRUISE {
     INPUT_CHECK(file(params.input))
     INPUT_CHECK.out
         .reads
-        .set { raw reads }
+        .set { raw_reads }
 
     ch_count = params.count_table ? file(params.count_table, checkIfExists: true) : null
     if (!ch_count) { // trim reads and run mageck count
