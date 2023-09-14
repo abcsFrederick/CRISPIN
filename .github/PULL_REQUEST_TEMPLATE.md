@@ -22,7 +22,7 @@ when referring to the issue.
 
 - [ ] This comment contains a description of changes with justifications, with any relevant issues linked.
 - ~[ ] Write unit tests for any new features, bug fixes, or other code changes.~ _testing framework not yet implemented_
-- [ ] Update docs if there are any API changes.
+- ~[ ] Update docs if there are any API changes.~ _on backburner until before public release_
 - [ ] If a new nextflow process is implemented:
   - [ ] docker container is set in `conf/modules.config`.
   - [ ] stub is defined.
