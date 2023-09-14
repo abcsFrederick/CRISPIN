@@ -51,7 +51,7 @@ def check_samplesheet(file_in, file_out):
     with open(file_in, "r", encoding="utf-8-sig") as fin:
         ## Check header
         MIN_COLS = 2
-        HEADER = ["sample", "fastq_1", "fastq_2"]
+        HEADER = ["sample", "fastq_1", "fastq_2", "treat_or_ctrl"]
         header = [x.strip('"') for x in fin.readline().strip().split(",")]
         if header[: len(HEADER)] != HEADER:
             print(
@@ -81,7 +81,7 @@ def check_samplesheet(file_in, file_out):
                 )
 
             ## Check sample name entries
-            sample, fastq_1, fastq_2 = lspl[: len(HEADER)]
+            sample, fastq_1, fastq_2, treat_or_ctrl = lspl[: len(HEADER)]
             if sample.find(" ") != -1:
                 print(
                     f"WARNING: Spaces have been replaced by underscores for sample: {sample}"
@@ -102,15 +102,23 @@ def check_samplesheet(file_in, file_out):
                             line,
                         )
 
+            ## check treatment or control designation
+            if treat_or_ctrl not in {"treatment", "control"}:
+                print_error(
+                    "treat_or_ctrl column can only contain values `treatment` or `control`.",
+                    "Line",
+                    line,
+                )
+
             ## Auto-detect paired-end/single-end
-            sample_info = []  ## [single_end, fastq_1, fastq_2]
             if sample and fastq_1 and fastq_2:  ## Paired-end short reads
-                sample_info = ["0", fastq_1, fastq_2]
+                is_single = "0"
             elif sample and fastq_1 and not fastq_2:  ## Single-end short reads
-                sample_info = ["1", fastq_1, fastq_2]
+                is_single = "1"
             else:
                 print_error("Invalid combination of columns provided!", "Line", line)
 
+            sample_info = [is_single, fastq_1, fastq_2, treat_or_ctrl]
             ## Create sample mapping dictionary = {sample: [[ single_end, fastq_1, fastq_2,]]}
             if sample not in sample_mapping_dict:
                 sample_mapping_dict[sample] = [sample_info]
@@ -127,12 +135,7 @@ def check_samplesheet(file_in, file_out):
         with open(file_out, "w") as fout:
             fout.write(
                 ",".join(
-                    [
-                        "sample",
-                        "single_end",
-                        "fastq_1",
-                        "fastq_2",
-                    ]
+                    ["sample", "single_end", "fastq_1", "fastq_2", "treat_or_ctrl"]
                 )
                 + "\n"
             )

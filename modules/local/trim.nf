@@ -10,7 +10,7 @@ process TRIM_SE {
     tuple val(meta), path(fastq)
 
   output:
-    tuple val(meta), path("*.fastq.gz")
+    tuple val(meta), path("*.fastq.gz"), emit: reads
 
   script:
   def prefix = task.ext.prefix ?: "${meta.id}"
