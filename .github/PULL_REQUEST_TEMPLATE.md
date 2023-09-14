@@ -24,6 +24,6 @@ when referring to the issue.
 - ~[ ] Write unit tests for any new features, bug fixes, or other code changes.~ _testing framework not yet implemented_
 - ~[ ] Update docs if there are any API changes.~ _on backburner until before public release_
 - [ ] If a new nextflow process is implemented:
-  - [ ] docker container is set in `conf/modules.config`.
+  - [ ] docker/singularity container is defined.
   - [ ] stub is defined.
 - [ ] Update `CHANGELOG.md` with a one-line description of these changes and reference the PR number. Guidelines: https://keepachangelog.com/en/1.1.0/
