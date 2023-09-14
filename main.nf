@@ -25,7 +25,7 @@ include { BAGEL       } from './submodules/local/bagel.nf'
 // MODULES
 include { DRUGZ } from './modules/local/drugz.nf'
 
-workflow CRUISE {
+workflow {
     INPUT_CHECK(file(params.input))
     INPUT_CHECK.out
         .reads
@@ -57,8 +57,4 @@ workflow CRUISE {
     if (params.bagel.run) {
         BAGEL(ch_count, control)
     }
-}
-
-workflow {
-    CRUISE()
 }
