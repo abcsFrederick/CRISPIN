@@ -18,13 +18,14 @@ input        : ${params.input}
 
 // SUBMODULES
 include { INPUT_CHECK } from './submodules/local/input_check.nf'
-include { TRIM_ALIGN  } from './submodules/local/trim_align.nf'
+include { TRIM_COUNT  } from './submodules/local/trim_count.nf'
 include { MAGECK      } from './submodules/local/mageck.nf'
+include { BAGEL       } from './submodules/local/bagel.nf'
 
 // MODULES
-include { DRUGZ } from "./modules/local/drugz.nf"
+include { DRUGZ } from './modules/local/drugz.nf'
 
-workflow CRUISE {
+workflow {
     INPUT_CHECK(file(params.input))
     INPUT_CHECK.out
         .reads
@@ -32,8 +33,8 @@ workflow CRUISE {
 
     ch_count = params.count_table ? file(params.count_table, checkIfExists: true) : null
     if (!ch_count) { // trim reads and run mageck count
-        TRIM_ALIGN(raw_reads, file(params.library))
-        ch_count = TRIM_ALIGN.out.count
+        TRIM_COUNT(raw_reads, file(params.library))
+        ch_count = TRIM_COUNT.out.count
     }
 
     raw_reads
@@ -44,15 +45,16 @@ workflow CRUISE {
             return meta.id
       }
       .set { treat_meta }
+
     treat = treat_meta.treat.collect()
     control = treat_meta.ctrl.collect()
-    MAGECK(ch_count, treat, control)
-
+    if (params.mageck.run) {
+        MAGECK(ch_count, treat, control)
+    }
     if (params.drugz.run) {
         DRUGZ(ch_count, treat, control)
     }
-}
-
-workflow {
-    CRUISE()
+    if (params.bagel.run) {
+        BAGEL(ch_count, control)
+    }
 }
