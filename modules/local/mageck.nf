@@ -65,6 +65,7 @@ process TEST {
 
 process MLE {
     label 'mageck'
+    label 'process_higher'
     container 'quay.io/biocontainers/mageck:0.5.9.5--py39h1f90b4d_3'
 
     input:
@@ -77,10 +78,12 @@ process MLE {
 
     script:
     """
+    export OMP_NUM_THREADS=${task.cpus}
     mageck mle \\
       -k ${count} \\
       -d ${design} \\
-      -n ${count.getBaseName(2)}
+      -n ${count.getBaseName(2)} \\
+      --threads ${task.cpus}
     """
 
     stub:
