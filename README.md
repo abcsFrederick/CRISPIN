@@ -11,13 +11,13 @@
 Run the test profile with stubs to see which processes will run
 
 ```sh
-CRUISE run -profile test,singularity -stub
+cruise run -profile test,singularity -stub
 ```
 
 Run the test profile
 
 ```sh
-CRUISE run -profile test,singularity
+cruise run -profile test,singularity
 ```
 
 ## Help & Contributing
