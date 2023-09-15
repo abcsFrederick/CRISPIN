@@ -18,7 +18,7 @@ input        : ${params.input}
 
 // SUBMODULES
 include { INPUT_CHECK } from './submodules/local/input_check.nf'
-include { TRIM_ALIGN  } from './submodules/local/trim_align.nf'
+include { TRIM_ALIGN  } from './submodules/local/trim_count.nf'
 include { MAGECK      } from './submodules/local/mageck.nf'
 include { BAGEL       } from './submodules/local/bagel.nf'
 

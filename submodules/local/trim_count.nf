@@ -1,5 +1,5 @@
-include { TRIM_SE      } from '../../modules/local/trim.nf'
-include { MAGECK_COUNT } from "../../modules/local/align.nf"
+include { TRIM_SE               } from '../../modules/local/trim.nf'
+include { COUNT as MAGECK_COUNT } from "../../modules/local/mageck.nf"
 
 workflow TRIM_ALIGN {
     take:

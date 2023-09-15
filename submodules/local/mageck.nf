@@ -1,6 +1,6 @@
 
-include { MAGECK_TEST as TEST } from "../../modules/local/mageck.nf"
-include { MAGECK_MLE as MLE   } from "../../modules/local/mageck.nf"
+include { TEST } from "../../modules/local/mageck.nf"
+include { MLE  } from "../../modules/local/mageck.nf"
 
 workflow MAGECK {
     take:
