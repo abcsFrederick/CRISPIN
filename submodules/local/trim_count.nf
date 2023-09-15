@@ -1,7 +1,7 @@
 include { TRIM_SE               } from '../../modules/local/trim.nf'
 include { COUNT as MAGECK_COUNT } from "../../modules/local/mageck.nf"
 
-workflow TRIM_ALIGN {
+workflow TRIM_COUNT {
     take:
         raw_reads
         library
