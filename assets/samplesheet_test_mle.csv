@@ -1,0 +1,5 @@
+sample,fastq_1,fastq_2,treat_or_ctrl
+HL60.initial,tests/data/file1.fastq.gz,,control
+KBM7.initial,tests/data/file1.fastq.gz,,control
+HL60.final,tests/data/file2.fastq.gz,,treatment
+KBM7.final,tests/data/file2.fastq.gz,,treatment
