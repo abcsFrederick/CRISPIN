@@ -78,7 +78,7 @@ process MLE {
 
     script:
     """
-    export OMP_NUM_THREADS=${task.cpus}
+    export OMP_NUM_THREADS=1 # this number gets multiplied by --threads
     mageck mle \\
       -k ${count} \\
       -d ${design} \\
