@@ -1,11 +1,9 @@
-// https://github.com/CCBR/ChiP-seek/blob/9ba449e4855f9710e86f2db7c1d9560de634b3f1/workflow/rules/align.smk#L21
-// https://github.com/nf-core/ampliseq/blob/dev/subworkflows/local/cutadapt_workflow.nf
-// https://github.com/nf-core/chipseq/blob/51eba00b32885c4d0bec60db3cb0a45eb61e34c5/modules/nf-core/modules/trimgalore/main.nf
+// TODO move this to shared CCBR modules repo
 process TRIM_SE {
   tag { meta.id }
   label 'qc'
   label 'process_high'
-  container 'nciccbr/ncigb_cutadapt_v1.18:latest'
+  container "${params.containers.cutadapt}"
 
   input:
     tuple val(meta), path(fastq)

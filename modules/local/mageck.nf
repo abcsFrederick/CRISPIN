@@ -1,7 +1,7 @@
 
 process COUNT {
     label 'mageck'
-    container 'quay.io/biocontainers/mageck:0.5.9.5--py39h1f90b4d_3'
+    container "${params.containers.mageck}"
 
     input:
         file(lib)
@@ -35,7 +35,7 @@ process COUNT {
 
 process TEST {
     label 'mageck'
-    container 'quay.io/biocontainers/mageck:0.5.9.5--py39h1f90b4d_3'
+    container "${params.containers.mageck}"
 
     input:
       path(count)
@@ -66,7 +66,7 @@ process TEST {
 process MLE {
     label 'mageck'
     label 'process_higher'
-    container 'quay.io/biocontainers/mageck:0.5.9.5--py39h1f90b4d_3'
+    container "${params.containers.mageck}"
 
     input:
         path(count)
@@ -96,7 +96,7 @@ process MLE {
 
 process VISPR { // TODO
     label 'vispr'
-    container 'quay.io/biocontainers/mageck-vispr:0.5.6--py_0'
+    container "${params.containers.vispr}"
 
     output:
         path("output.txt")
