@@ -1,3 +1,0 @@
-sample,fastq_1,fastq_2,treat_or_ctrl
-plasmid,data/test/ERR376998.fastq.gz,,control
-ESC1,data/test/ERR376999.fastq.gz,,treatment
