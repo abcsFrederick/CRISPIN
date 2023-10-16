@@ -28,7 +28,7 @@ Create a lua file in `/data/CCBR_Pipeliner/modules/ccbrpipeliner`, e.g. `dev.lua
 You can copy the most recent lua file to use as a base, then modify the following line:
 
 ```lua
-source_sh("bash", "/data/CCBR_Pipeliner/Pipelines/CHAMPAGNE/cruise-dev/bin/install.sh .v0.1.0")
+source_sh("bash", "/data/CCBR_Pipeliner/Pipelines/CRUISE/cruise-dev/bin/install.sh .v0.1.0")
 ```
 
 Change the version of CRUISE as needed. Notice the dot (`.`) in front of the version number to indicate a hidden path.
