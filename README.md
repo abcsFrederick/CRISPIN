@@ -6,18 +6,48 @@
 
 [![build](https://github.com/CCBR/CRUISE/actions/workflows/build.yml/badge.svg)](https://github.com/CCBR/CRUISE/actions/workflows/build.yml)
 
-## Usage
+## Set up
 
-Run the test profile with stubs to see which processes will run
+Cruise is installed on the [Biowulf HPC](#biowulf).
+For installation in other execution environments,
+refer to the [docs](https://ccbr.github.io/cruise).
+
+### Biowulf
+
+Cruise is available on [Biowulf](https://hpc.nih.gov/) in the `ccbrpipeliner` module.
+You'll first need to start an interactive session and create a directory from where you'll run cruise.
 
 ```sh
-cruise run -profile test,singularity -stub
+# start an interactive node
+sinteractive --mem=2g --cpus-per-task=2 --gres=lscratch:200
+# make a working directory for your project and go to it
+mkdir -p /data/$USER/chipseq
+cd /data/$USER/chipseq
+# load the ccbrpipeliener module
+module load ccbrpipeliner
 ```
 
-Run the test profile
+## Usage
+
+Initialize and run cruise with test data:
 
 ```sh
-cruise run -profile test,singularity
+# copy the cruise config files to your current directory
+cruise init
+# preview the cruise jobs that will run with the test dataset
+cruise run --mode local -profile test -preview
+# launch a cruise run on slurm with the test dataset
+cruise run --mode slurm -profile test,biowulf
+```
+
+To run cruise on your own data, you'll need to create a sample sheet.
+Take a look at the example: [assets/samplesheet_test.csv](assets/samplesheet_test.csv).
+
+Once you've created a samplesheet with paths to your fastq files,
+run cruise with the `--input` option to specify the path to your sample sheet:
+
+```sh
+cruise run --mode slurm -profile biowulf --input samplesheet.csv
 ```
 
 ## Help & Contributing
