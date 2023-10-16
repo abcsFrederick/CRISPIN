@@ -12,14 +12,27 @@ Pre-commit will run the hooks every time you commit.
 
 ## Versions
 
-Increment the version number following semantic versioning[^3] in the `VERSION` file.
+Increment the version number following semantic versioning[^1] in the `VERSION` file.
 
-[^3]: semantic versioning guidelines https://semver.org/
+[^1]: semantic versioning guidelines https://semver.org/
 
 ## Changelog
 
-Keep the changelog up to date with all changes in `docs/CHANGELOG.md`.
+Keep the changelog up to date with all notable changes in `CHANGELOG.md`[^2].
+
+[^2]: changelog guidelines: https://keepachangelog.com/en/1.1.0/
 
 ## VS code extensions
 
 If you use VS code, installing [nf-core extension pack](https://marketplace.visualstudio.com/items?itemName=nf-core.nf-core-extensionpack) is recommended.
+
+## Installation
+
+For testing and debugging, We recommend installing the dev version of cruise to a user-specific location.
+
+```
+git clone https://github.com/CCBR/CRUISE
+mkdir -p ~/bin/cruise
+pip install ./CRUISE -t ~/bin/cruise
+export PATH="$HOME/bin/cruise/bin:$PATH"
+```
