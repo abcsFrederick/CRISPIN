@@ -1,7 +1,7 @@
 
 process FOLD_CHANGE {
     label 'bagel'
-    container 'nciccbr/cruise_bagel_2.0:0.1.0'
+    container "${params.containers.bagel}"
 
     input:
         path(count)
@@ -30,7 +30,7 @@ process FOLD_CHANGE {
 
 process BAYES_FACTOR {
     label 'bagel'
-    container 'nciccbr/cruise_bagel_2.0:0.1.0'
+    container "${params.containers.bagel}"
 
     input:
         path(fold_change)
@@ -55,7 +55,7 @@ process BAYES_FACTOR {
 }
 process PRECISION_RECALL {
     label 'bagel'
-    container 'nciccbr/cruise_bagel_2.0:0.1.0'
+    container "${params.containers.bagel}"
 
     input:
         path(bayes_factor)

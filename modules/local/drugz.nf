@@ -1,7 +1,7 @@
 
 process DRUGZ {
     label 'drugz'
-    container 'nciccbr/cruise_drugz:0.1.0'
+    container "${params.containers.drugz}"
 
     input:
         path(count)
