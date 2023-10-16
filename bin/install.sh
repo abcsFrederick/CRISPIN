@@ -10,7 +10,7 @@ bin_path=${install_path}/bin/
 conda activate py311
 
 echo "Installing CRUISE to ${install_path}"
-pip install ${repo_path} --target ${install_path}
+pip install ${repo_path} --target ${install_path} --upgrade
 chmod +x ${install_path}/cruise/bin/*.*
 
 if [[ ":$PATH:" != *":${bin_path}:"* ]];then
