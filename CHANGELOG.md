@@ -12,6 +12,11 @@
   - fc (fold change)
   - bf (bayes factor)
   - pr (precision recall)
+- CLI (#16)
+  - `champagne init` to initialize a project directory.
+  - `champagne run`
+    - `--mode slurm` to submit a slurm job to biowulf or frce.
+    - `--main path/to/main.nf` to select a different local install of cruise, or specify the repo (`CCBR/CRUISE`) to get it from GitHub.
 
 <!--
 ## CRUISE v0.1.0
