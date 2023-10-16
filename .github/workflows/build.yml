@@ -32,4 +32,6 @@ jobs:
           pip install .[dev,test]
       - name: Test stub run
         run: |
+          cd tests/
+          cruise init
           cruise run -profile ci_stub -stub
