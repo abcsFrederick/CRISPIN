@@ -9,5 +9,5 @@ include LICENSE
 include VERSION
 include README.md
 include main.nf
-include nextflow.conf
+include nextflow.config
 exclude *.py[ocd]
