@@ -17,10 +17,10 @@ input        : ${params.input}
 .stripIndent()
 
 // SUBMODULES
-include { INPUT_CHECK } from './submodules/local/input_check.nf'
-include { TRIM_COUNT  } from './submodules/local/trim_count.nf'
-include { MAGECK      } from './submodules/local/mageck.nf'
-include { BAGEL       } from './submodules/local/bagel.nf'
+include { INPUT_CHECK } from './subworkflows/local/input_check.nf'
+include { TRIM_COUNT  } from './subworkflows/local/trim_count.nf'
+include { MAGECK      } from './subworkflows/local/mageck.nf'
+include { BAGEL       } from './subworkflows/local/bagel.nf'
 
 // MODULES
 include { DRUGZ } from './modules/local/drugz.nf'

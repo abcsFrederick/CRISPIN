@@ -1,0 +1,17 @@
+{
+    "name": "CCBR/CRUISE",
+    "homePage": "https://github.com/CCBR/CRUISE",
+    "repos": {
+        "https://github.com/CCBR/nf-modules": {
+            "modules": {
+                "CCBR": {
+                    "cutadapt": {
+                        "branch": "main",
+                        "git_sha": "a3525c765b76400269695235bbf164a948604c4a",
+                        "installed_by": ["modules"]
+                    }
+                }
+            }
+        }
+    }
+}

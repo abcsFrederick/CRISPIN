@@ -61,7 +61,7 @@ Changelog = "https://github.com/CCBR/CRUISE/blob/main/docs/CHANGELOG.md"
 cruise = "."
 
 [tool.setuptools.package-data]
-"*" = ["CITATION.cff", "LICENSE", "VERSION", "main.nf", "nextflow.config", "assets/*", "bin/*", "conf/*", "modules/*/*", "submodules/*/*"]
+"*" = ["CITATION.cff", "LICENSE", "VERSION", "main.nf", "nextflow.config", "assets/*", "bin/*", "conf/*", "modules/*/*", "subworkflows/*/*"]
 
 [tool.setuptools.dynamic]
 version = {file = "VERSION"}
