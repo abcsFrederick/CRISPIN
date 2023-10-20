@@ -1,4 +1,4 @@
-include { TRIM_SE               } from '../../modules/local/trim.nf'
+include { CUTADAPT               } from '../../modules/CCBR/cutadapt'
 include { COUNT as MAGECK_COUNT } from "../../modules/local/mageck.nf"
 
 workflow TRIM_COUNT {
@@ -7,8 +7,8 @@ workflow TRIM_COUNT {
         library
 
     main:
-        TRIM_SE(raw_reads)
-        TRIM_SE.out.reads
+        CUTADAPT(raw_reads)
+        CUTADAPT.out.reads
         .multiMap { meta, fastq ->
             id: meta.id
             fastq: fastq
@@ -22,5 +22,5 @@ workflow TRIM_COUNT {
 
     emit:
         count = MAGECK_COUNT.out.count
-        trimmed_reads = TRIM_SE.out.reads
+        trimmed_reads = CUTADAPT.out.reads
 }
