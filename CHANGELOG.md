@@ -1,4 +1,6 @@
-## CRUISE development version
+## CRUISE v0.1.0
+
+This is the first release of CRUISE 🎉
 
 ### New features
 
@@ -17,9 +19,3 @@
   - `cruise run`
     - `--mode slurm` to submit a slurm job to biowulf or frce.
     - `--main path/to/main.nf` to select a different local install of cruise, or specify the repo (`CCBR/CRUISE`) to get it from GitHub.
-
-<!--
-## CRUISE v0.1.0
-
-This is the first release of CRUISE 🎉
--->
