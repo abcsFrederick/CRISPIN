@@ -43,11 +43,15 @@ cruise run --mode slurm -profile test,biowulf
 To run cruise on your own data, you'll need to create a sample sheet.
 Take a look at the example: [assets/samplesheet_test.csv](assets/samplesheet_test.csv).
 
+You'll also need to select an appropriate library for your dataset.
+CRUISE is bundled with several libraries in [assets/lib](assets/lib),
+or you can download your own.
 Once you've created a samplesheet with paths to your fastq files,
-run cruise with the `--input` option to specify the path to your sample sheet:
+run cruise with the `--input` option to specify the path to your sample sheet
+and `--library` for the path to your library file:
 
 ```sh
-cruise run --mode slurm -profile biowulf --input samplesheet.csv
+cruise run --mode slurm -profile biowulf --input samplesheet.csv --library assets/lib/yusa_library.csv
 ```
 
 ## Help & Contributing
