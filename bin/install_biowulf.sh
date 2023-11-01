@@ -3,7 +3,7 @@ set -euxo pipefail
 
 version=$1
 
-repo_path=/data/CCBR_Pipeliner/Pipelines/CRUISE/cruise-dev/
+repo_path=/data/CCBR_Pipeliner/Pipelines/CRUISE/dev/
 install_path=/data/CCBR_Pipeliner/Pipelines/CRUISE/${version}
 bin_path=${install_path}/bin/
 
