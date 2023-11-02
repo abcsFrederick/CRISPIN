@@ -41,7 +41,8 @@ cruise run --mode slurm -profile test,biowulf
 ```
 
 To run cruise on your own data, you'll need to create a sample sheet.
-Take a look at the example: [assets/samplesheet_test.csv](assets/samplesheet_test.csv).
+Take a look at the example: 
+[assets/samplesheet_test_biowulf.csv](assets/samplesheet_test_biowulf.csv).
 
 You'll also need to select an appropriate library for your dataset.
 CRUISE is bundled with several libraries in [assets/lib](assets/lib),
