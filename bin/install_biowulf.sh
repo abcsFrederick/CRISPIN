@@ -16,7 +16,7 @@ popd
 
 echo "Installing CRUISE to ${install_path}"
 pip install ${repo_path} --target ${install_path} --upgrade
-chmod +x ${install_path}/cruise/bin/*.*
+chmod a+x ${install_path}/cruise/bin/*.*
 chmod -R a+r ${install_path}
 
 if [[ ":$PATH:" != *":${bin_path}:"* ]];then
