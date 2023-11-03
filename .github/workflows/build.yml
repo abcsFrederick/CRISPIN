@@ -30,6 +30,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip setuptools
           pip install .[dev,test]
+          python -c 'from cruise.src.util import chmod_bins_exec; chmod_bins_exec()'
       - name: Test stub run
         run: |
           cd tests/
