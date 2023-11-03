@@ -99,7 +99,7 @@ def chmod_bins_exec():
     bin_dir = nek_base("bin/")
     for filename in os.listdir(bin_dir):
         bin_path = os.path.join(bin_dir, filename)
-        if bin_path.is_file(follow_symlinks=False):
+        if os.path.isfile(bin_path, follow_symlinks=False):
             file_stat = os.stat(bin_path)
             # below is equivalent to `chmod +x`
             os.chmod(
