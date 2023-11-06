@@ -1,3 +1,10 @@
+## development version
+
+### Bug fixes
+
+- All scripts in the bin directory are now made executable for all users on biowulf (#25).
+- Libraries are now copied to the assets directory (#26).
+
 ## CRUISE v0.1.0
 
 This is the first release of CRUISE 🎉
