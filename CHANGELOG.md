@@ -1,11 +1,11 @@
-## development version
+## CRUISE 0.1.1
 
 ### Bug fixes
 
 - All scripts in the bin directory are now made executable for all users on biowulf (#25).
-- Libraries are now copied to the assets directory (#26).
+- Data directories are copied recursively during python package installation (#26).
 
-## CRUISE v0.1.0
+## CRUISE 0.1.0
 
 This is the first release of CRUISE 🎉
 
