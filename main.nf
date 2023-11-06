@@ -33,7 +33,7 @@ workflow {
 
     ch_count = params.count_table ? file(params.count_table, checkIfExists: true) : null
     if (!ch_count) { // trim reads and run mageck count
-        TRIM_COUNT(raw_reads, file(params.library))
+        TRIM_COUNT(raw_reads, file(params.library, checkIfExists: true))
         ch_count = TRIM_COUNT.out.count
     }
 
