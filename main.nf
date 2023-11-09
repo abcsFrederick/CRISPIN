@@ -25,6 +25,16 @@ include { BAGEL       } from './subworkflows/local/bagel.nf'
 // MODULES
 include { DRUGZ } from './modules/local/drugz.nf'
 
+workflow.onComplete {
+    if (!workflow.stubRun && !workflow.commandLine.contains('-preview')) {
+        println "Running spooker"
+        def message = Utils.spooker(workflow)
+        if (message) {
+            println message
+        }
+    }
+}
+
 workflow {
     INPUT_CHECK(file(params.input))
     INPUT_CHECK.out
