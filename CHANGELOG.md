@@ -1,3 +1,7 @@
+## development version
+
+- Run spooker on workflow completion.
+
 ## CRUISE 0.1.1
 
 ### Bug fixes
