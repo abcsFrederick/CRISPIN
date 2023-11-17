@@ -31,6 +31,11 @@ jobs:
           python -m pip install --upgrade pip setuptools
           pip install .[dev,test]
           python -c 'from cruise.src.util import chmod_bins_exec; chmod_bins_exec()'
+      - name: Check CLI basics
+        run: |
+          which cruise
+          cruise --version
+          cruise --citation
       - name: Test stub run
         run: |
           cd tests/
