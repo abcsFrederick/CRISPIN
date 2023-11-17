@@ -12,6 +12,8 @@ description = "TODO insert description of CRUISE here"
 keywords = ["bioinformatics", "nextflow"]
 authors = [
     {name = "Kelly Sovacool", email = "kelly.sovacool@nih.gov"},
+    {name = "Nathan Wong"},
+    {name = "Samantha Sevilla"},
     {name = "Vishal Koparde", email = "vishal.koparde@nih.gov"},
     {name = "Nathan Wong"},
 ]
