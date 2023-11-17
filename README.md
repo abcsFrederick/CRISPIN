@@ -21,8 +21,8 @@ You'll first need to start an interactive session and create a directory from wh
 # start an interactive node
 sinteractive --mem=2g --cpus-per-task=2 --gres=lscratch:200
 # make a working directory for your project and go to it
-mkdir -p /data/$USER/chipseq
-cd /data/$USER/chipseq
+mkdir -p /data/$USER/crisprseq
+cd /data/$USER/crisprseq
 # load the ccbrpipeliener module
 module load ccbrpipeliner
 ```
