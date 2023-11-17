@@ -1,4 +1,7 @@
+from cffconvert.cli.create_citation import create_citation
+from cffconvert.cli.validate_or_write_output import validate_or_write_output
 from time import localtime, strftime
+
 import click
 import collections.abc
 import os
@@ -21,10 +24,11 @@ def get_version():
     return version
 
 
-def print_citation():
-    with open(nek_base("CITATION.cff"), "r") as f:
-        for line in f:
-            click.echo(line, nl=False, err=True)
+def print_citation(context, param, value):
+    citation = create_citation(nek_base("CITATION.cff"), None)
+    # click.echo(citation._implementation.cffobj['message'])
+    validate_or_write_output(None, "bibtex", False, citation)
+    context.exit()
 
 
 def msg(err_message):
