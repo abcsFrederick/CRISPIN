@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
+# Usage:
+#  bin/install_biowulf.sh
 set -euxo pipefail
-version=$1
 
 repo_path=/data/CCBR_Pipeliner/Pipelines/CRUISE/dev/
-install_path=/data/CCBR_Pipeliner/Pipelines/CRUISE/${version}
+version=`cat ${repo_path}/VERSION`
+install_path=/data/CCBR_Pipeliner/Pipelines/CRUISE/.${version}
 bin_path=${install_path}/bin/
 
 . "/data/CCBR_Pipeliner/db/PipeDB/Conda/etc/profile.d/conda.sh"
