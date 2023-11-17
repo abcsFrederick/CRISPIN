@@ -12,7 +12,7 @@ authors:
   - family-names: Koparde
     given-names: Vishal
     orcid: https://orcid.org/0000-0001-8978-8495
-title: "CHAMPAGNE: CHromAtin iMmuno PrecipitAtion sequencinG aNalysis pipEline"
+title: "CRUISE: Crispr scReen seqUencIng analySis pipEline"
 url: https://ccbr.github.io/CHAMPAGNE/
 repository-code: https://github.com/CCBR/CHAMPAGNE
 license: MIT
