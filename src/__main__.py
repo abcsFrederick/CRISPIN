@@ -33,7 +33,7 @@ def common_options(func):
 @click.version_option(get_version(), "-v", "--version", is_flag=True)
 @click.option("--citation", is_flag=True, callback=print_citation, expose_value=False)
 def cli():
-    """CHromAtin iMmuno PrecipitAtion sequencinG aNalysis pipEline
+    """Crispr scReen seqUencIng analySis pipEline
 
     For more options, run:
     cruise [command] --help"""
