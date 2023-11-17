@@ -44,8 +44,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "black >= 22.0.0",
-    "pre-commit",
-    "cffconvert"
+    "pre-commit"
 ]
 test = [
     "pytest"
