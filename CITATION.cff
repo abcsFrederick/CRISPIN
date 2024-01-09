@@ -13,6 +13,9 @@ authors:
     given-names: Vishal
     orcid: https://orcid.org/0000-0001-8978-8495
 title: "CRUISE: Crispr scReen seqUencIng analySis pipEline"
-url: https://ccbr.github.io/CHAMPAGNE/
-repository-code: https://github.com/CCBR/CHAMPAGNE
+url: https://ccbr.github.io/CRUISE
+repository-code: https://github.com/CCBR/CRUISE
 license: MIT
+type: software
+version: v0.1.1
+date-released: 2023-11-06
