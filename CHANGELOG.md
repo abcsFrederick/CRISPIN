@@ -1,7 +1,8 @@
 ## development version
 
 - Run spooker on workflow completion.
-- Print the recommended citation in bibtex format with `cruise --citation`. (#32)
+- Print the recommended citation in bibtex format with `cruise --citation`. (#32, @kelly-sovacool)
+- Fix citation information (#38, @kelly-sovacool)
 
 ## CRUISE 0.1.1
 
