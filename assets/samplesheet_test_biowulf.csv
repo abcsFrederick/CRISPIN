@@ -1,3 +1,0 @@
-sample,fastq_1,fastq_2,treat_or_ctrl
-plasmid,/data/CCBR_Pipeliner/testdata/CRUISE/ERR376998.fastq.gz,,control
-ESC1,/data/CCBR_Pipeliner/testdata/CRUISE/ERR376999.fastq.gz,,treatment
