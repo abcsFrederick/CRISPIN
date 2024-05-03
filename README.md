@@ -1,4 +1,4 @@
-# CRISPIN 🛳️
+# CRISPIN 🍪
 
 **C**rispr sc**R**een seq**U**encIng analy**S**is pip**E**line
 
