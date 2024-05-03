@@ -6,9 +6,9 @@ requires = [
 build-backend = 'setuptools.build_meta'
 
 [project]
-name = 'CRUISE'
+name = 'CRISPIN'
 dynamic = ['version','readme']
-description = "TODO insert description of CRUISE here"
+description = "TODO insert description of CRISPIN here"
 keywords = ["bioinformatics", "nextflow"]
 authors = [
     {name = "Kelly Sovacool", email = "kelly.sovacool@nih.gov"},
@@ -51,16 +51,16 @@ test = [
 ]
 
 [project.scripts]
-cruise = "cruise.src.__main__:main"
+crispin = "crispin.src.__main__:main"
 
 [project.urls]
-Homepage = "https://ccbr.github.io/CRUISE"
-Documentation = "https://ccbr.github.io/CRUISE"
-Repository = "https://github.com/CCBR/CRUISE"
-Changelog = "https://github.com/CCBR/CRUISE/blob/main/docs/CHANGELOG.md"
+Homepage = "https://ccbr.github.io/CRISPIN"
+Documentation = "https://ccbr.github.io/CRISPIN"
+Repository = "https://github.com/CCBR/CRISPIN"
+Changelog = "https://github.com/CCBR/CRISPIN/blob/main/docs/CHANGELOG.md"
 
 [tool.setuptools.package-dir]
-cruise = "."
+crispin = "."
 
 [tool.setuptools.package-data]
 "*" = ["CITATION.cff", "LICENSE", "VERSION", "main.nf", "nextflow.config", "assets/**", "assets/**", "bin/**", "conf/**", "modules/**", "subworkflows/**"]

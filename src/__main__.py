@@ -1,5 +1,5 @@
 """
-Entrypoint for CRUISE CLI
+Entrypoint for CRISPIN CLI
 
 Check out the wiki for a detailed look at customizing this file:
 https://github.com/beardymcjohnface/Snaketool/wiki/Customising-your-Snaketool
@@ -40,10 +40,14 @@ def common_options(func):
     help="Print the citation in bibtex format and exit.",
 )
 def cli():
-    """Crispr scReen seqUencIng analySis pipEline
+    """CRISPR screen pipeline
 
     For more options, run:
-    cruise [command] --help"""
+    crispin [command] --help
+
+    See the docs website for more details:
+    https://ccbr.github.io/CRISPIN/
+    """
     pass
 
 
@@ -51,15 +55,18 @@ help_msg_extra = """
 \b
 EXAMPLES:
 Execute with slurm:
-    cruise run ... --mode slurm
+    crispin run ... --mode slurm
 Preview the processes that will run:
-    cruise run ... --mode local -preview
+    crispin run ... --mode local -preview
 Add nextflow args (anything supported by `nextflow run`):
-    cruise run ... -work-dir path/to/workDir
-Run with a specific installation of cruise:
-    cruise run --main path/to/cruise/main.nf ...
+    crispin run ... -work-dir path/to/workDir
+Run with a specific installation of crispin:
+    crispin run --main path/to/crispin/main.nf ...
 Run with a specific tag, branch, or commit from GitHub:
-    cruise run --main CCBR/CRUISE -r v0.1.0 ...
+    crispin run --main CCBR/CRISPIN -r v0.1.0 ...
+
+See the docs website for more details:
+https://ccbr.github.io/CRISPIN/
 """
 
 
@@ -72,7 +79,7 @@ Run with a specific tag, branch, or commit from GitHub:
 @click.option(
     "--main",
     "main_path",
-    help="Path to the cruise main.nf file or the GitHub repo (CCBR/CRUISE). Defaults to the version installed in the $PATH.",
+    help="Path to the crispin main.nf file or the GitHub repo (CCBR/CRISPIN). Defaults to the version installed in the $PATH.",
     type=str,
     default=nek_base(os.path.join("main.nf")),
     show_default=True,
@@ -88,13 +95,13 @@ Run with a specific tag, branch, or commit from GitHub:
 @common_options
 def run(main_path, _mode, **kwargs):
     """Run the workflow"""
-    if (  # this is the only acceptable github repo option for cruise
-        main_path != "CCBR/CRUISE"
+    if (  # this is the only acceptable github repo option for crispin
+        main_path != "CCBR/CRISPIN"
     ):
         # make sure the path exists
         if not os.path.exists(main_path):
             raise FileNotFoundError(
-                f"Path to the cruise main.nf file not found: {main_path}"
+                f"Path to the crispin main.nf file not found: {main_path}"
             )
 
     run_nextflow(

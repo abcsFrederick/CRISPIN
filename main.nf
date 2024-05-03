@@ -1,5 +1,5 @@
 log.info """\
-CRUISE 🛳️
+CRISPIN 🛳️
 =============
 NF version   : $nextflow.version
 runName      : $workflow.runName

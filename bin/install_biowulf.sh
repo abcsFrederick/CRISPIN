@@ -3,9 +3,9 @@
 #  bin/install_biowulf.sh
 set -euxo pipefail
 
-repo_path=/data/CCBR_Pipeliner/Pipelines/CRUISE/dev/
+repo_path=/data/CCBR_Pipeliner/Pipelines/CRISPIN/dev/
 version=`cat ${repo_path}/VERSION`
-install_path=/data/CCBR_Pipeliner/Pipelines/CRUISE/.${version}
+install_path=/data/CCBR_Pipeliner/Pipelines/CRISPIN/.${version}
 bin_path=${install_path}/bin/
 
 . "/data/CCBR_Pipeliner/db/PipeDB/Conda/etc/profile.d/conda.sh"
@@ -16,9 +16,9 @@ pushd ${repo_path}
 rm -rf build/ *.egg-info
 popd
 
-echo "Installing CRUISE to ${install_path}"
+echo "Installing CRISPIN to ${install_path}"
 pip install ${repo_path} --target ${install_path} --upgrade
-chmod a+rx ${install_path}/cruise/bin/*.*
+chmod a+rx ${install_path}/crispin/bin/*.*
 chmod -R a+r ${install_path}
 
 if [[ ":$PATH:" != *":${bin_path}:"* ]];then
