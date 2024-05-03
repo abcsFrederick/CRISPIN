@@ -1,19 +1,20 @@
 ## development version
 
+- The pipeline name has been changed from CRUISE 🛳️ to CRISPIN 🍪. (#43, @kelly-sovacool)
 - Run spooker on workflow completion.
 - Print the recommended citation in bibtex format with `crispin --citation`. (#32, @kelly-sovacool)
 - Fix citation information (#38, @kelly-sovacool)
 
-## CRISPIN 0.1.1
+## CRUISE 0.1.1
 
 ### Bug fixes
 
 - All scripts in the bin directory are now made executable for all users on biowulf (#25).
 - Data directories are copied recursively during python package installation (#26).
 
-## CRISPIN 0.1.0
+## CRUISE 0.1.0
 
-This is the first release of CRISPIN 🎉
+This is the first release of CRUISE 🎉
 
 ### New features
 
@@ -28,7 +29,7 @@ This is the first release of CRISPIN 🎉
   - bf (bayes factor)
   - pr (precision recall)
 - CLI (#16)
-  - `crispin init` to initialize a project directory.
-  - `crispin run`
+  - `cruise init` to initialize a project directory.
+  - `cruise run`
     - `--mode slurm` to submit a slurm job to biowulf or frce.
-    - `--main path/to/main.nf` to select a different local install of crispin, or specify the repo (`CCBR/CRISPIN`) to get it from GitHub.
+    - `--main path/to/main.nf` to select a different local install of cruise, or specify the repo (`CCBR/CRUISE`) to get it from GitHub.
