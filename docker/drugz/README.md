@@ -1,5 +1,5 @@
 # drugZ
 
-Container for drugZ processes in CRUISE
+Container for drugZ processes in CRISPIN
 
-<https://hub.docker.com/r/nciccbr/cruise_drugz>
+<https://hub.docker.com/r/nciccbr/crispin_drugz>

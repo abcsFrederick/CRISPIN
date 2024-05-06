@@ -1,21 +1,21 @@
-# CRUISE 🛳️
+# CRISPIN 🍪
 
 **C**rispr sc**R**een seq**U**encIng analy**S**is pip**E**line
 
 🚧 **This project is under active development. It is not yet ready for production use.** 🚧
 
-[![build](https://github.com/CCBR/CRUISE/actions/workflows/build.yml/badge.svg)](https://github.com/CCBR/CRUISE/actions/workflows/build.yml)
+[![build](https://github.com/CCBR/CRISPIN/actions/workflows/build.yml/badge.svg)](https://github.com/CCBR/CRISPIN/actions/workflows/build.yml)
 
 ## Set up
 
 Cruise is installed on the [Biowulf HPC](#biowulf).
 For installation in other execution environments,
-refer to the [docs](https://ccbr.github.io/cruise).
+refer to the [docs](https://ccbr.github.io/crispin).
 
 ### Biowulf
 
 Cruise is available on [Biowulf](https://hpc.nih.gov/) in the `ccbrpipeliner` module.
-You'll first need to start an interactive session and create a directory from where you'll run cruise.
+You'll first need to start an interactive session and create a directory from where you'll run crispin.
 
 ```sh
 # start an interactive node
@@ -29,37 +29,37 @@ module load ccbrpipeliner
 
 ## Usage
 
-Initialize and run cruise with test data:
+Initialize and run crispin with test data:
 
 ```sh
-# copy the cruise config files to your current directory
-cruise init
-# preview the cruise jobs that will run with the test dataset
-cruise run --mode local -profile test -preview
-# launch a cruise run on slurm with the test dataset
-cruise run --mode slurm -profile test,biowulf
+# copy the crispin config files to your current directory
+crispin init
+# preview the crispin jobs that will run with the test dataset
+crispin run --mode local -profile test -preview
+# launch a crispin run on slurm with the test dataset
+crispin run --mode slurm -profile test,biowulf
 ```
 
-To run cruise on your own data, you'll need to create a sample sheet.
-Take a look at the example: 
+To run crispin on your own data, you'll need to create a sample sheet.
+Take a look at the example:
 [assets/samplesheet_test_biowulf.csv](assets/samplesheet_test_biowulf.csv).
 
 You'll also need to select an appropriate library for your dataset.
-CRUISE is bundled with several libraries in [assets/lib](assets/lib),
+CRISPIN is bundled with several libraries in [assets/lib](assets/lib),
 or you can download your own.
 Once you've created a samplesheet with paths to your fastq files,
-run cruise with the `--input` option to specify the path to your sample sheet
+run crispin with the `--input` option to specify the path to your sample sheet
 and `--library` for the path to your library file:
 
 ```sh
-cruise run --mode slurm -profile biowulf --input samplesheet.csv --library assets/lib/yusa_library.csv
+crispin run --mode slurm -profile biowulf --input samplesheet.csv --library assets/lib/yusa_library.csv
 ```
 
 ## Help & Contributing
 
-Come across a **bug**? Open an [issue](https://github.com/CCBR/CRUISE/issues) and include a minimal reproducible example.
+Come across a **bug**? Open an [issue](https://github.com/CCBR/CRISPIN/issues) and include a minimal reproducible example.
 
-Have a **question**? Ask it in [discussions](https://github.com/CCBR/CRUISE/discussions).
+Have a **question**? Ask it in [discussions](https://github.com/CCBR/CRISPIN/discussions).
 
 Want to **contribute** to this project? Check out the [contributing guidelines](docs/CONTRIBUTING.md).
 
