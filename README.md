@@ -1,6 +1,6 @@
 # CRISPIN 🍪
 
-**C**rispr sc**R**een seq**U**encIng analy**S**is pip**E**line
+Crispr screen sequencing analysis pipeline
 
 🚧 **This project is under active development. It is not yet ready for production use.** 🚧
 
@@ -8,13 +8,13 @@
 
 ## Set up
 
-Cruise is installed on the [Biowulf HPC](#biowulf).
+CRISPIN is installed on the [Biowulf HPC](#biowulf).
 For installation in other execution environments,
 refer to the [docs](https://ccbr.github.io/crispin).
 
 ### Biowulf
 
-Cruise is available on [Biowulf](https://hpc.nih.gov/) in the `ccbrpipeliner` module.
+CRISPIN is available on [Biowulf](https://hpc.nih.gov/) in the `ccbrpipeliner` module.
 You'll first need to start an interactive session and create a directory from where you'll run crispin.
 
 ```sh
@@ -40,7 +40,7 @@ crispin run --mode local -profile test -preview
 crispin run --mode slurm -profile test,biowulf
 ```
 
-To run crispin on your own data, you'll need to create a sample sheet.
+To run CRISPIN on your own data, you'll need to create a sample sheet.
 Take a look at the example:
 [assets/samplesheet_test_biowulf.csv](assets/samplesheet_test_biowulf.csv).
 
