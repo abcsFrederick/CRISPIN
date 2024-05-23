@@ -1,6 +1,6 @@
 {
-    "name": "CCBR/CRUISE",
-    "homePage": "https://github.com/CCBR/CRUISE",
+    "name": "CCBR/CRISPIN",
+    "homePage": "https://github.com/CCBR/CRISPIN",
     "repos": {
         "https://github.com/CCBR/nf-modules": {
             "modules": {

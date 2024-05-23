@@ -1,4 +1,4 @@
-# Contributing to CRUISE
+# Contributing to CRISPIN
 
 TODO -- describe gitflow, require PRs...
 
@@ -28,11 +28,11 @@ If you use VS code, installing [nf-core extension pack](https://marketplace.visu
 
 ## Installation
 
-For testing and debugging, We recommend installing the dev version of cruise to a user-specific location.
+For testing and debugging, We recommend installing the dev version of crispin to a user-specific location.
 
 ```
-git clone https://github.com/CCBR/CRUISE
-mkdir -p ~/bin/cruise
-pip install ./CRUISE -t ~/bin/cruise
-export PATH="$HOME/bin/cruise/bin:$PATH"
+git clone https://github.com/CCBR/CRISPIN
+mkdir -p ~/bin/crispin
+pip install ./CRISPIN -t ~/bin/crispin
+export PATH="$HOME/bin/crispin/bin:$PATH"
 ```

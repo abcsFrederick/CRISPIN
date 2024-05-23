@@ -30,17 +30,17 @@ jobs:
         run: |
           python -m pip install --upgrade pip setuptools
           pip install .[dev,test]
-          python -c 'from cruise.src.util import chmod_bins_exec; chmod_bins_exec()'
+          python -c 'from crispin.src.util import chmod_bins_exec; chmod_bins_exec()'
       - name: Check CLI basics
         run: |
-          which cruise
-          cruise --version
-          cruise --citation
+          which crispin
+          crispin --version
+          crispin --citation
       - name: Test stub run
         run: |
           cd tests/
-          cruise init
-          cruise run -profile ci_stub -stub
+          crispin init
+          crispin run -profile ci_stub -stub
 
   build-status: # https://github.com/orgs/community/discussions/4324#discussioncomment-3477871
     runs-on: ubuntu-latest
