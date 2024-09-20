@@ -44,3 +44,6 @@ results/
 
 # user-specific dev files
 *KLS*
+
+# mkdocs
+/site
