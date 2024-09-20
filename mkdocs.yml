@@ -95,5 +95,4 @@ nav:
   - Developer Guide:
       - How to contribute: contributing.md
       - Release guide: release-guide.md
-  - Contributors: contributors.md
   - Changelog: changelog.md
