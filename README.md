@@ -42,10 +42,10 @@ crispin run --mode slurm -profile test,biowulf
 
 To run CRISPIN on your own data, you'll need to create a sample sheet.
 Take a look at the example:
-[assets/samplesheet_test_biowulf.csv](assets/samplesheet_test_biowulf.csv).
+[assets/samplesheet_test_biowulf.csv](https://github.com/CCBR/CRISPIN/tree/main/assets/samplesheet_test_biowulf.csv).
 
 You'll also need to select an appropriate library for your dataset.
-CRISPIN is bundled with several libraries in [assets/lib](assets/lib),
+CRISPIN is bundled with several libraries in [assets/lib](https://github.com/CCBR/CRISPIN/tree/main/assets/lib),
 or you can download your own.
 Once you've created a samplesheet with paths to your fastq files,
 run crispin with the `--input` option to specify the path to your sample sheet
@@ -61,7 +61,7 @@ Come across a **bug**? Open an [issue](https://github.com/CCBR/CRISPIN/issues) a
 
 Have a **question**? Ask it in [discussions](https://github.com/CCBR/CRISPIN/discussions).
 
-Want to **contribute** to this project? Check out the [contributing guidelines](docs/CONTRIBUTING.md).
+Want to **contribute** to this project? Check out the [contributing guidelines](https://github.com/CCBR/CRISPIN/tree/main/docs/CONTRIBUTING.md).
 
 ## References
 

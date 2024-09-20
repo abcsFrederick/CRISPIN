@@ -4,6 +4,7 @@
 - Run spooker on workflow completion.
 - Print the recommended citation in bibtex format with `crispin --citation`. (#32, @kelly-sovacool)
 - Fix citation information (#38, @kelly-sovacool)
+- Improve the documentation website with a dropdown menu to select which version to view. The latest release is shown by default. (#45, @kelly-sovacool)
 
 ## CRUISE 0.1.1
 
