@@ -1,4 +1,4 @@
-## development version
+## CRISPIN 1.0.0
 
 - The pipeline name has been changed from CRUISE 🛳️ to CRISPIN 🍪. (#43, @kelly-sovacool)
 - Run spooker on workflow completion.
