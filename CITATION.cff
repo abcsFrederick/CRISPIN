@@ -18,5 +18,9 @@ url: https://ccbr.github.io/CRISPIN
 repository-code: https://github.com/CCBR/CRISPIN
 license: MIT
 type: software
+identifiers:
+  - description: Archived snapshots of all versions
+    type: doi
+    value: 10.5281/zenodo.13844209
 version: v1.0.0
 date-released: 2024-09-26

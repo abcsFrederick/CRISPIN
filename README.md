@@ -7,6 +7,8 @@
 🚧 **This project is under active development. It is not yet ready for production use.** 🚧
 
 [![build](https://github.com/CCBR/CRISPIN/actions/workflows/build.yml/badge.svg)](https://github.com/CCBR/CRISPIN/actions/workflows/build.yml)
+[![docs](https://github.com/CCBR/CRISPIN/actions/workflows/docs-mkdocs.yml/badge.svg)](https://ccbr.github.io/CRISPIN/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13844209.svg)](https://doi.org/10.5281/zenodo.13844209)
 
 ## Set up
 
