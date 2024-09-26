@@ -90,9 +90,6 @@ markdown_extensions:
 # Page Tree
 nav:
   - Home: index.md
-  - Usage:
-      - Getting Started: getting-started.md
   - Developer Guide:
       - How to contribute: contributing.md
-      - Release guide: release-guide.md
   - Changelog: changelog.md
