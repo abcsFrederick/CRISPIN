@@ -2,6 +2,8 @@
 
 **CRISP**r screen sequencing analysis pipel**IN**e
 
+> formerly known as CRUISE
+
 🚧 **This project is under active development. It is not yet ready for production use.** 🚧
 
 [![build](https://github.com/CCBR/CRISPIN/actions/workflows/build.yml/badge.svg)](https://github.com/CCBR/CRISPIN/actions/workflows/build.yml)
