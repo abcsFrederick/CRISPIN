@@ -1,4 +1,4 @@
-## CRISPIN development version
+## CRISPIN 1.0.1
 
 - CRISPIN is now archived in Zenodo as v1.0.0. You can cite it with <https://doi.org/10.5281/zenodo.13844209>. (@kelly-sovacool)
 - Fix bug in spooker handler. (#49, @kelly-sovacool)
