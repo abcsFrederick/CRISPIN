@@ -1,8 +1,7 @@
 class Utils {
     // run spooker for the workflow
-    public static String spooker(workflow) {
-        def pipeline_name = "${workflow.manifest.name.tokenize('/')[-1]}"
-        def command_string = "spooker ${workflow.launchDir} ${pipeline_name}"
+    public static String spooker(launch_dir, pipeline_name) {
+        def command_string = "spooker ${launch_dir} ${pipeline_name}"
         def out = new StringBuilder()
         def err = new StringBuilder()
         try {
@@ -12,7 +11,7 @@ class Utils {
         } catch(IOException e) {
             err = e
         }
-        new FileWriter("${workflow.launchDir}/log/spooker.log").with {
+        new FileWriter("${launch_dir}/log/spooker.log").with {
             write("${out}\n${err}")
             flush()
         }

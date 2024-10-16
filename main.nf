@@ -27,8 +27,10 @@ include { DRUGZ } from './modules/local/drugz.nf'
 
 workflow.onComplete {
     if (!workflow.stubRun && !workflow.commandLine.contains('-preview')) {
-        println "Running spooker"
-        def message = Utils.spooker(workflow)
+        def pipeline_name = "${workflow.manifest.name.tokenize('/')[-1]}"
+        def launch_dir = "${workflow.launchDir}"
+        println "Running: spooker $launch_dir $pipeline_name"
+        def message = Utils.spooker(launch_dir, pipeline_name)
         if (message) {
             println message
         }
