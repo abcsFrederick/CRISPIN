@@ -9,6 +9,7 @@
 [![build](https://github.com/CCBR/CRISPIN/actions/workflows/build.yml/badge.svg)](https://github.com/CCBR/CRISPIN/actions/workflows/build.yml)
 [![docs](https://github.com/CCBR/CRISPIN/actions/workflows/docs-mkdocs.yml/badge.svg)](https://ccbr.github.io/CRISPIN/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13844209.svg)](https://doi.org/10.5281/zenodo.13844209)
+[![release](https://img.shields.io/github/v/release/CCBR/CRISPIN?color=blue&label=latest%20release)](https://github.com/CCBR/CRISPIN/releases/latest)
 
 ## Set up
 
