@@ -1,5 +1,7 @@
 ## CRISPIN development version
 
+## CRISPIN 1.2.0
+
 - CRISPIN now depends on ccbr_tools v0.4 for updated jobby & spooker utilities. (#63, @kelly-sovacool)
 
 ## CRISPIN 1.1.1
