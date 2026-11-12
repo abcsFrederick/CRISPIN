@@ -13,20 +13,25 @@ repos:
       - id: check-added-large-files
       - id: end-of-file-fixer
       - id: trailing-whitespace
+  # CCBR custom hooks
+  - repo: https://github.com/CCBR/Tools
+    rev: v0.7.0
+    hooks:
+      - id: sync-nextflow-version
   # spell check
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.4.2
+    rev: v2.4.3
     hooks:
       - id: codespell
         # https://github.com/codespell-project/codespell/issues/1498
   # Python formatting
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 26.3.1
+    rev: 26.10.1
     hooks:
       - id: black
   # R formatting
   - repo: https://github.com/lorenzwalthert/precommit
-    rev: v0.4.3.9029
+    rev: v0.4.3.9034
     hooks:
       - id: style-files
   # general linting
@@ -36,7 +41,7 @@ repos:
       - id: prettier
   # enforce commit format
   - repo: https://github.com/compilerla/conventional-pre-commit
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: conventional-pre-commit
         stages: [commit-msg]
